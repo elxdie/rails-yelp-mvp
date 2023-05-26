@@ -9,3 +9,7 @@ class Review < ApplicationRecord
   # A review’s rating must be an integer. For example, a review with a rating of 2.5 should be invalid!
   validates :rating, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 5 }
 end
+
+# OR:
+# validates :rating, numericality: { only_integer: true }
+# validates :rating, inclusion: { in: 0..5 }
